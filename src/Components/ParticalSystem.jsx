@@ -14,16 +14,16 @@ function TextModel() {
 
   // Optional: apply a single material to all meshes
   scene.traverse((child) => {
-  if (child.isMesh) {
-    child.material = new THREE.MeshStandardMaterial({
-      color: "#220000",
-      roughness: 0.6,
-      metalness: 0.1,
-    });
-  }
-});
+    if (child.isMesh) {
+      child.material = new THREE.MeshStandardMaterial({
+        color: "#220000",
+        roughness: 0.6,
+        metalness: 0.1,
+      });
+    }
+  });
 
-  return <primitive object={scene} />;
+  return <primitive object={scene} position={[0, 2, 0]} />;
 }
 
 export default function Scene() {
@@ -38,10 +38,10 @@ export default function Scene() {
 
       {/* Controls */}
       <OrbitControls
-  enableZoom={false}
-  enablePan={false}
-  enableRotate={true}
-/>
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={false}
+      />
 
     </>
   );

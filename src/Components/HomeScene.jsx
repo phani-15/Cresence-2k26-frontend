@@ -1,42 +1,28 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from "react";
+import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber";
 import CresenceText from "./ParticalSystem";
-import { Canvas, useThree } from "@react-three/fiber";
-import Text from './SimpleModel'
-
-function OrthographicCamera() {
-  const { camera, size } = useThree();
-
-  React.useEffect(() => {
-    camera.near = 0.01;
-    camera.far = 1000;
-    camera.left = size.width / -2;
-    camera.right = size.width / 2;
-    camera.top = size.height / 2;
-    camera.bottom = size.height / -2;
-    camera.position.set(0, 0, 1);
-    camera.updateProjectionMatrix();
-  }, [camera, size]);
-
-  return null;
-}
+import DesertGround from "../assets/DesertGround";
+import Castle from "../assets/Castle";
+import { OrbitControls } from "@react-three/drei";
 
 export default function HomeScene() {
   return (
-    <div className='desert-bg min-w-screen min-h-screen'>
+    <div className="deser-bg relative min-w-screen min-h-screen overflow-hidden">
+      {/* UI Layer */}
       <Navbar />
-      <div className="absolute top-0 left-0 w-full h-full z-0 lg:block">
-        <Canvas
-          orthographic
-          camera={{ zoom: 120, position: [0, 0, 10] }}
-          >
-          <ambientLight intensity={2} />
-          <directionalLight position={[0, 0, 10]} intensity={3} />
 
-          <CresenceText />
+      {/* 3D Scene */}
+      <div className="absolute inset-0">
+        <Canvas camera={{ fov: 45, position: [0, 2, 10] }}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[1, 8, 5]} intensity={2} />
+
+          <DesertGround />
+          <Castle />
+          <CresenceText/>
         </Canvas>
-
       </div>
     </div>
-  )
+  );
 }
