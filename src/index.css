@@ -9,8 +9,15 @@
   width: 100%;
 }
 
-.bg-castle{
+.bg-castle {
   background-image: url('/images/castle.png');
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@utility mask-img {
+  mask-image: url("/images/lamp.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 70%;
 }
