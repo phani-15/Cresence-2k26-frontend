@@ -1,3 +1,5 @@
+import {workshopsData} from '../assets/Data'
+import Navbar from '../Components/Navbar'
 import React, { useState } from 'react'
 import { technicalEventsData, nonTechnicalEventsData, eSportsData } from '../assets/Data'
 

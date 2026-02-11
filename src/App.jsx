@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
-import HomeScene from './Pages/HomeScene'
+import HomeScene from './Components/EntryScene'
 import Navbar from './Components/Navbar'
+import Loader from "./Components/Loader"
 import Workshops from './Pages/Workshops'
 import Events from './Pages/Events'
 import EventTimeline from './Pages/EventTimeline'
@@ -15,7 +16,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomeScene />} />
+          <Route path="/home" element={<HomeScene />} />
+          <Route path="/" element={<Loader />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/events" element={<Events />} />
           <Route path="/timeline" element={<EventTimeline timelineItems={timelineItems} />} />

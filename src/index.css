@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --font-arabian: "ArabianNights", monospace;
+}
+
+@font-face {
+  font-family: "ArabianNights";
+  src: url("/CinzelDecorative-Bold.ttf");
+  font-weight: 400;
+  font-style: normal;
+  /* font-display: swap; */
+}
+
 .desert-bg {
   background-image: url('/images/background.png');
   background-size: cover;
@@ -11,14 +23,53 @@
 
 .night-bg {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  /* or desired height */
+  overflow: hidden;
+  /* 🔴 THIS STOPS SCROLL */
+}
+.night-bg-mobile {
+  position: relative;
+  height: 100vh;
+  /* or desired height */
+  overflow: hidden;
+  /* 🔴 THIS STOPS SCROLL */
+}
+
+
+.bg-castle {
+  background-image: url('/images/castle.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility mask-img {
+  mask-image: url("/images/lamp.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 70%;
 }
 
 .night-bg::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('/images/background.png');
+
+  background-image: url('/images/main_img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(2px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+.night-bg-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/images/main_img-mobile.jpg');
   background-size: cover;
   background-position: center;
   filter: blur(2px);
@@ -38,7 +89,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('/images/events-bg.png');
+  background-image: url('/images/arabian.webp');
   background-size: cover;
   background-position: center;
   z-index: -1;
