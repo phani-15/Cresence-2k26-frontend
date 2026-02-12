@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Workshops from "../Pages/Workshops";
 
 // Register ScrollTrigger (even if using auto-play, usually good practice in GSAP React setups if scroll is involved later)
 gsap.registerPlugin(ScrollTrigger);
@@ -72,7 +73,7 @@ export default function HomeScene() {
       <div className="w-full h-screen bg-black relative flex items-center justify-center">
         <div
           ref={imgRef}
-          className="mask-img night-bg-mobile md:night-bg w-full h-full object-cover object-right fixed"
+          className="mask-img w-full h-full object-cover object-right fixed"
           alt="Main Reveal">
 
         </div>
@@ -95,6 +96,7 @@ export default function HomeScene() {
 										</span>
       ))}
       </h1>
+      <Workshops/>
 <p className="absolute font-arabian top-95 right-12 md:hidden text-white text-[20px] entry-scene-text">
   2k26
 </p>    </div>
