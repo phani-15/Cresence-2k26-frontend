@@ -49,14 +49,13 @@ const Navbar = React.forwardRef(() => {
 	const targetDate = "2026-03-06T00:00:00+05:30";
 	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 	const [menuOpen, setMenuOpen] = useState(false);
-	const lastScrollY = useRef(window.scrollY);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const lastScrollY = useRef(0);
 	const timeref = useRef();
 	const menuref = useRef();
 	const menuIconRef = useRef();
 	const navLinksRef = useRef([]); // Initialize for animating nav links
-
 	const navigate = useNavigate()
-
 	useGSAP(() => {
 		gsap.from(".countdown-number",
 			{
@@ -68,6 +67,18 @@ const Navbar = React.forwardRef(() => {
 				delay: 0.5,
 			}
 		);
+
+		// Hide countdown on scroll
+		gsap.to(timeref.current, {
+			opacity: 0,
+			y: 20,
+			scrollTrigger: {
+				trigger: "body",
+				start: "top top",
+				end: "200 top", // Disappear after 200px of scroll
+				scrub: true,
+			}
+		});
 	}, { scope: timeref });
 	// This hook only runs when menuOpen changes
 	useGSAP(() => {
@@ -136,14 +147,10 @@ const Navbar = React.forwardRef(() => {
 		return () => clearInterval(interval);
 	}, [targetDate]);
 
-	// Hide or show navbar on scroll
+	// Track scroll for other potential UI changes
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > lastScrollY.current) {
-				setIsVisible(false);
-			} else {
-				setIsVisible(true);
-			}
+			setIsScrolled(window.scrollY > 50);
 			lastScrollY.current = window.scrollY;
 		};
 
@@ -153,7 +160,7 @@ const Navbar = React.forwardRef(() => {
 
 	return (
 		<>
-			<div className="fixed top-0 left-0 right-0 z-50 flex flex-row">
+			<div className="fixed top-0 left-0 right-0 z-50 flex flex-row overflow-x-hidden">
 				<img
 					onClick={() => navigate('/')}
 					src="/images/logo.png" alt="" className="absolute cursor-pointer border border-gray-200 rounded-full p-0.5 top-0 right-0 left-0 h-[9vh] ml-10 mt-10" />
@@ -161,7 +168,7 @@ const Navbar = React.forwardRef(() => {
 				<div>
 					<div
 						ref={timeref}
-						className="hidden bottom-0 absolute mb-10 ml-140 border rounded-4xl lg:flex text-center py-1 px-8 pt-2 items-center bg-black/60 backdrop-blur-md"
+						className="hidden fixed bottom-10 left-1/2 -translate-x-1/2 border border-white/20 rounded-4xl lg:flex text-center py-2 px-8 items-center bg-black/60 backdrop-blur-md z-10"
 					>
 						<div className="font-arabian text-white flex justify-center space-x-4">
 							{[

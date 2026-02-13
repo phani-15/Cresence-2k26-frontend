@@ -9,6 +9,7 @@ import Events from './Pages/Events'
 import Stay from './Pages/Stay'
 import EventTimeline from './Components/TimeLine'
 import { timelineItems } from './assets/Data'
+import Ourteam from './Components/Ourteam'
 import Temp from './Components/Temp'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<HomeScene />} />
           <Route path="/" element={<Loader />} />
           <Route path="/workshops" element={<Workshops />} />
+          <Route path="/ourteam" element={<Ourteam />} />
           <Route path="/events" element={<Events />} />
           <Route path='/stay' element={<Stay />} />
           <Route path="/timeline" element={<EventTimeline timelineItems={timelineItems} />} />
