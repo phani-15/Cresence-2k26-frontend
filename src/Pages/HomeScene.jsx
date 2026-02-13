@@ -5,7 +5,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from "react-responsive";
-import Workshops from "./Workshops";
+import WorkShopsComponent from '../Components/WorkShopsComponent'
+import TechEventDeck from "../Components/TechnicalEves";
+import { technicalEventsData } from "../assets/Data";
+// import ArabianRoyalDeck from "../Components/ArabianRoyalDeck";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,12 +94,19 @@ export default function HomeScene() {
         animationDone ? "night-bg-mobile md:night-bg" : "bg-black"
       } min-w-screen overflow-x-hidden`}
     >
-      <div className="w-full h-screen relative z-0 flex flex-col items-center justify-center">
+      {/*
+        HERO VIEWPORT SECTION
+        ──────────────────────
+        Exactly one viewport tall. Contains the mask animation target and overlay.
+        position:relative + z-index:0 so it sits above the fixed ::before bg.
+      */}
+      <div className="w-screen h-screen relative z-0 flex flex-col items-center justify-center">
+
+        {/* Mask reveal target — must stay childless, CSS mask clips all children */}
         <div
           ref={imgRef}
-          className={`mask-img ${
-            animationDone ? "bg-transparent" : "night-bg-mobile md:night-bg"
-          } absolute inset-0 w-full h-full`}
+          className={`mask-img ${animationDone ? "bg-transparent" : "night-bg-mobile md:night-bg"
+            } absolute inset-0 w-full h-full`}
         />
         <div
           ref={overlayRef}
@@ -122,9 +132,13 @@ export default function HomeScene() {
         className="relative z-10"
         style={{ visibility: "hidden", opacity: 0 }}
       >
-      </div>
-      <Workshops/>
+        <WorkShopsComponent />
+        {/* <ArabianRoyalDeck /> */}
+        {/* <Ourteam /> */}
+        <TechEventDeck events={technicalEventsData}/>
+        {/* Add more sections here — keep their backgrounds transparent */}
         <Ourteamforhome />
+        </div>
       <Navbar ref={navbarref} />
     </div>
   );

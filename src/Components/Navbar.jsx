@@ -12,7 +12,6 @@ const EASING = {
 	elastic: "elastic.out(1, 0.5)",
 };
 
-
 const AnimatedNavLink = ({ to, children }) => (
 	<NavLink to={to}>
 		{({ isActive }) => (
@@ -56,7 +55,7 @@ const Navbar = React.forwardRef(() => {
 	const menuref = useRef();
 	const menuIconRef = useRef();
 	const navLinksRef = useRef([]); // Initialize for animating nav links
-
+	const navigate = useNavigate()
 	useGSAP(() => {
 		gsap.from(".countdown-number",
 			{
@@ -161,8 +160,10 @@ const Navbar = React.forwardRef(() => {
 
 	return (
 		<>
-			<div className="flex flex-row overflow-x-hidden">
-				<img src="/images/logo.png" alt="" className="absolute top-0 right-0 left-0 h-[6vh] ml-10 mt-10" />
+			<div className="fixed top-0 left-0 right-0 z-50 flex flex-row overflow-x-hidden">
+				<img
+					onClick={() => navigate('/')}
+					src="/images/logo.png" alt="" className="absolute cursor-pointer border border-gray-200 rounded-full p-0.5 top-0 right-0 left-0 h-[9vh] ml-10 mt-10" />
 				{/* timebar with blur */}
 				<div>
 					<div
@@ -212,19 +213,19 @@ const Navbar = React.forwardRef(() => {
 					<div className="w-full flex ml-2 lg:h-20 font-medium ">
 						<div className="items-start mt-20 pl-3 flex flex-col justify-evenly ">
 							<h1
-								className="menu-title flex font-arabian flex-col items-start justify-between md:text-2xl lg:text-6xl py-3 text-white"
+								className="menu-title flex font-arabian flex-col items-start justify-between md:text-2xl lg:text-5xl py-3 text-white"
 								style={{
 									transform: "translateX(-20px)",
 									opacity: 0,
 								}}
 							>
-								cresence
+								Sukumar
 							</h1>
 							<div className="flex font-arabian flex-col items-start justify-between md:text-2xl lg:text-2xl inner-content-l py-3">
 								{[
 									{ to: "/events", label: "Event" },
 									{ to: "/workshops", label: "Workshop" },
-									{ to: "/About Us", label: "Stay" },
+									{ to: "/stay", label: "Stay" },
 									{ to: "/timeline", label: "Timeline" },
 									{ to: "/about", label: "About us" },
 									{ to: "/ourteam", label: "our team" },
