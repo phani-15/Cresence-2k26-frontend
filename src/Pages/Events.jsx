@@ -401,6 +401,8 @@ export default function Events() {
 					{
 						selected === "" ?
 							<>
+
+							<Navbar/>
 								<h1 className='text-6xl font-serif text-slate-50 font-cinzel font-semibold text-center py-10'>Events</h1>
 								
 							{/* <button 
