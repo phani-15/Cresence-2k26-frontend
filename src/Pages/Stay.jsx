@@ -39,7 +39,7 @@ export default function Stay() {
 						{/* Train */}
 						<div className="w-full lg:w-3/4">
 							<h3 className="text-xl font-semibold text-amber-300 mb-2">
-								🚆 By Train
+								 By Train
 							</h3>
 							<p>
 								Vizianagaram is a major railway junction in Andhra Pradesh with direct
@@ -66,7 +66,7 @@ export default function Stay() {
 						{/* Bus */}
 						<div className="w-full lg:w-3/4">
 							<h3 className="text-xl font-semibold text-amber-300 mb-2">
-								🚌 By Bus
+								By Bus
 							</h3>
 							<p>
 								Vizianagaram Bus Station is well connected to{" "}
@@ -93,7 +93,7 @@ export default function Stay() {
 						{/* Air */}
 						<div className="w-full lg:w-3/4">
 							<h3 className="text-xl font-semibold text-amber-300 mb-2">
-								✈️ By Air (Nearest Airport)
+								 By Air (Nearest Airport)
 							</h3>
 							<p>
 								The nearest airport is{" "}
@@ -142,10 +142,10 @@ export default function Stay() {
 				<div className="min-h-screen bg-black/70 backdrop-blur-sm px-6 py-12">
 
 					<div className="max-w-6xl mx-auto text-center mb-12">
-						<h1 className="text-5xl font-semibold font-cinzel text-amber-300 tracking-wide">
+						<h1 className="lg:text-5xl text-3xl font-semibold font-cinzel text-amber-300 tracking-wide">
 							ACCOMODATION
 						</h1>
-						<p className="mt-4 text-slate-200 max-w-3xl mx-auto">
+						<p className="mt-4 text-slate-200 italic text-sm lg:text-lg  max-w-3xl mx-auto">
 							Experience comfort, safety, and hospitality during the grand celebration
 							of technology and innovation at JNTU Gurajada, Vizianagaram.
 						</p>
@@ -155,7 +155,7 @@ export default function Stay() {
 
 						<Section title="About">
 							<p>
-								<span className="text-emerald-400 font-semibold">CRESENCE Fest 2K26 </span>
+								<span className="text-emerald-400 text-xs lg:text-lg font-semibold">CRESENCE Fest 2K26 </span>
 								is scheduled on <span className="text-amber-300">March 6 & 7</span> at
 								JNTU Gurajada, Vizianagaram. We provide secure accommodation for two
 								nights and two days, ensuring a smooth and worry-free fest experience.
@@ -164,7 +164,7 @@ export default function Stay() {
 
 						{/* Timings */}
 						<Section title="Timings">
-							<ul className="space-y-2">
+							<ul className="space-y-2 text-sm lg:text-lg">
 								<li>🕕 <b>Check-In:</b> 6:00 A.M – 10:00 P.M</li>
 								<li>🕘 <b>Check-Out:</b> Anytime on or before your check-out date</li>
 							</ul>
@@ -193,18 +193,18 @@ export default function Stay() {
 						</Section>
 
 						{/* Register Button */}
-						<div className="text-center flex justify-center gap-10 mt-10">
+						<div className="text-center flex justify-center gap-4 lg:gap-10 mt-2 lg:mt-10">
 							<button
 								onClick={() => navigate("/register")}
 								className="px-10 py-4 rounded-full text-lg font-semibold
                          bg-linear-to-r from-amber-400 to-emerald-400
                          text-black hover:scale-105 transition-transform shadow-lg"
 							>
-								Register for Stay
+								Register
 							</button>
 							<button
 								onClick={() => setClicked(true)}
-								className="px-10 py-4 rounded-full text-lg font-semibold
+								className="lg:px-10 px-6 py-4 rounded-full text-lg font-semibold
                          bg-linear-to-r from-amber-400 to-emerald-400
                          text-black hover:scale-105 transition-transform shadow-lg"
 							>

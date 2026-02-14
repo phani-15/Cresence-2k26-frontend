@@ -213,7 +213,7 @@ const Navbar = React.forwardRef((props, ref) => {
 					<div className="w-full flex ml-2 lg:h-20 font-medium ">
 						<div className="items-start mt-20 pl-3 flex flex-col justify-evenly ">
 							<h1
-								className="menu-title flex font-arabian flex-col items-start justify-between md:text-2xl lg:text-5xl py-3 text-white"
+								className="menu-title flex font-arabian flex-col items-start justify-between text-3xl lg:text-5xl py-3 text-white"
 								style={{
 									transform: "translateX(-20px)",
 									opacity: 0,
@@ -221,7 +221,7 @@ const Navbar = React.forwardRef((props, ref) => {
 							>
 								Sukumar
 							</h1>
-							<div className="flex font-arabian flex-col items-start justify-between md:text-2xl lg:text-2xl inner-content-l py-3">
+							<div className="flex font-arabian flex-col items-start justify-between text-2xl inner-content-l py-3">
 								{[
 									{ to: "/events", label: "Event" },
 									{ to: "/workshops", label: "Workshop" },

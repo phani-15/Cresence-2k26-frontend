@@ -252,6 +252,7 @@ export const workshopsData = {
         description:
             "The Cyber Threat Intelligence (CTI) Workshop is designed to provide participants with an in-depth understanding of modern cyber threats, attack vectors, and intelligence-driven defense strategies. This workshop will cover topics such as threat identification, analysis of cyber threats, risk mitigation, and the use of real-world intelligence frameworks. Attendees will gain hands-on experience in tracking cyber threats, analyzing attack patterns, and using intelligence tools to enhance cybersecurity defenses. The session will be conducted by Snr Scientist from CDAC Hyderabad and Global expert from Cyberpeace.",
         instructor: "Expert",
+        long_desc:"The Cyber Threat Intelligence (CTI) Workshop is designed to provide participants with an in-depth understanding of modern cyber threats, attack vectors, and intelligence-driven defense strategies. This workshop will cover designed to provide participants with an in-depth understanding of modern cyber threats,  topics such as threat identification, analysis of cyber threats, risk mitigation, and the use of real-world intelligence frameworks. Attendees will rld intelligence frameworks. Attendees will gain hands-on experience gain hands-on experience in tracking cyber threats, analyzing attack patterns, and using intelligence tools to enhance cybersecurity defenses. The session will be conducted by Snr Scientist from CDAC Hyderabad and Global expert from Cyberpeace.",
         position:
             "Cybersecurity Specialist | Expert from CDAC & Cyber Peace",
 
@@ -283,6 +284,7 @@ export const workshopsData = {
         instructor: "Dr. Y. Narasimhulu",
         position: "Research and Development(R&D) Associate @TCS",
         date: "March 12th & 13th",
+        long_desc:"The Cyber Threat Intelligence (CTI) Workshop is designed to provide participants with an in-depth understanding of modern cyber threats, attack vectors, and intelligence-driven defense strategies. This workshop will cover designed signed to provide participants with an in-depth understanding of modern cyber threats, attack vectors, and intelligence-driven defense strategies. This workshop will cove to provide participants with an in-depth understanding of modern cyber threats,  topics such as threat identification, analysis of cyber threats, risk mitigation, and the use of real-world intelligence frameworks. Attendees will rld intelligence frameworks. Attendees will gain hands-on experience gain hands-on experience in tracking cyber threats, analyzing attack patterns, and using intelligence tools to enhance cybersecurity defenses. The session will be conducted by Snr Scientist from CDAC Hyderabad and Global expert from Cyberpeace.",
         mode: "Offline",
         image: "/images/Event_landscapes/Code.jpg",
         color: "text-blue-500",
